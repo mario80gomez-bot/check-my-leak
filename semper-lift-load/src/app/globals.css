@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Global Styles (no @apply) ---------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;   /* white */
+  color: #0e2a1c;              /* Semper green text */
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Links */
+a {
+  text-decoration: underline;
+  color: #0e2a1c;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #d8a31a; /* gold */
+}
+
+/* Inputs/Textareas */
+input,
+textarea {
+  font-family: inherit;
+  color: #0f172a;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8; /* slate-400 */
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid #d8a31a;
+  outline-offset: 2px;
+}
+/* -- force-remove any stray background images -- */
+body, main, section, .hero {
+  background-image: none !important;
+}/* Force hero text to stay white, even if globals set a green text color */
+.hero-title { color: #fff !important; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.hero-sub { color: rgba(255,255,255,.92) !important; }
+
+/* Optional: ensure no global rule paints headers green inside hero */
+.hero * { color: inherit; }
+
+/* Final safety: make hero heading/subtitle white no matter what */
+.hero-title-force { color: #fff !important; }
+.hero-sub-force { color: rgba(255, 255, 255, 0.92) !important; }
+/* Make widths include padding & border so edges align perfectly */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Inputs always fill the form width and line up perfectly */
+input, textarea {
+  display: block;
+  width: 100%;
+}
+
+/* Softer card background to pop from page */
+.form-card {
+  background: #f9faf9;
+  border: 1px solid rgba(14,42,28,0.6); /* military-green border */
+  border-radius: 0.5rem; /* rounded-md */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+}
+
+/* Brand orange button + hover */
+.btn-brand {
+  background: #f28c00;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-brand:hover { background: #ff9900; }
+
+/* Keep hero text white (safety) */
+.hero-title-force { color: #fff !important; }
+.hero-sub-force { color: rgba(255,255,255,0.92) !important; }
