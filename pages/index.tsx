@@ -123,7 +123,19 @@ export default function Home() {
               {result}
             </div>
           )}
-
+{/* Privacy note (only shows after a result) */}
+{result && (
+  <p
+    style={{
+      marginTop: "8px",
+      fontSize: "12px",
+      color: "#666",
+      textAlign: "center",
+    }}
+  >
+    We don’t store what you type. This tool provides general guidance only.
+  </p>
+)}
           {/* Next Steps (only shows after a result) */}
           {result && (
             <div style={{ marginTop: "16px", animation: "fadeIn 250ms ease-out" }}>
