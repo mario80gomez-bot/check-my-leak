@@ -109,33 +109,33 @@ export default function Home() {
 
           {/* Result */}
           {result && (
-            <div
-              style={{
-                marginTop: "12px",
-                padding: "12px 14px",
-                borderRadius: "12px",
-                backgroundColor: "#f5f7ed",
-                border: "1px solid #d8d8d8",
-                color: "#222",
-                animation: "fadeIn 250ms ease-out",
-              }}
-            >
-              {result}
-            </div>
-          )}
-{/* Privacy note (only shows after a result) */}
-{result && (
-  <p
+  <div
     style={{
-      marginTop: "8px",
-      fontSize: "12px",
-      color: "#666",
-      textAlign: "center",
+      marginTop: "12px",
+      padding: "12px 14px",
+      borderRadius: "12px",
+      backgroundColor: "#f5f7ed",
+      border: "1px solid #d8d8d8",
+      color: "#222",
+      animation: "fadeIn 250ms ease-out",
     }}
   >
-    We don’t store what you type. This tool provides general guidance only.
-  </p>
+    {result}
+
+    <p
+      style={{
+        marginTop: "8px",
+        fontSize: "12px",
+        color: "#666",
+        textAlign: "center",
+      }}
+    >
+      We don’t store what you type. This tool provides general guidance only.
+    </p>
+  </div>
 )}
+
+
           {/* Next Steps (only shows after a result) */}
           {result && (
             <div style={{ marginTop: "16px", animation: "fadeIn 250ms ease-out" }}>
