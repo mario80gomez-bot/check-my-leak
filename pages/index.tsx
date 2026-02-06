@@ -108,7 +108,7 @@ export default function Home() {
           </button>
 
           {/* Result */}
-          {result && (
+         {result && (
   <div
     style={{
       marginTop: "12px",
