@@ -108,7 +108,8 @@ export default function Home() {
           </button>
 
           {/* Result */}
-         {result && (
+         {/* Result */}
+{result && (
   <div
     style={{
       marginTop: "12px",
@@ -120,16 +121,9 @@ export default function Home() {
       animation: "fadeIn 250ms ease-out",
     }}
   >
-    {result}
+    <div>{result}</div>
 
-    <p
-      style={{
-        marginTop: "8px",
-        fontSize: "12px",
-        color: "#666",
-        textAlign: "center",
-      }}
-    >
+    <p style={{ marginTop: "8px", fontSize: "12px", color: "#666" }}>
       We don’t store what you type. This tool provides general guidance only.
     </p>
   </div>
