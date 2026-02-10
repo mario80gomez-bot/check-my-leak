@@ -110,20 +110,18 @@ export default function Home() {
           {/* Result */}
          {/* Result */}
 {result && (
-  <>
-    <div
-      style={{
-        marginTop: "12px",
-        padding: "12px 14px",
-        borderRadius: "12px",
-        backgroundColor: "#f5f7ed",
-        border: "1px solid #d8d8d8",
-        color: "#222",
-        animation: "fadeIn 250ms ease-out",
-      }}
-    >
-      {result}
-    </div>
+  <div
+    style={{
+      marginTop: "12px",
+      padding: "12px 14px",
+      borderRadius: "12px",
+      backgroundColor: "#f5f7ed",
+      border: "1px solid #d8d8d8",
+      color: "#222",
+      animation: "fadeIn 250ms ease-out",
+    }}
+  >
+    <div>{result}</div>
 
     <p
       style={{
@@ -133,9 +131,9 @@ export default function Home() {
         textAlign: "center",
       }}
     >
-      We don’t store what you type. This tool provides general guidance only.
+      We don't store what you type. This tool provides general guidance only.
     </p>
-  </>
+  </div>
 )}
 
 
