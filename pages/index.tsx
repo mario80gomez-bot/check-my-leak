@@ -106,6 +106,26 @@ export default function Home() {
           >
             {loading ? "Checking..." : "Check Now"}
           </button>
+{/* Info / Education section (shows BEFORE any result) */}
+<div style={{ marginTop: "18px" }}>
+  <h3 style={{ margin: "0 0 10px 0" }}>What is Check My Leak?</h3>
+  <p style={{ margin: "0 0 10px 0" }}>
+    Check My Leak is a simple tool that helps you find out if your email or phone number
+    has been exposed in a data breach.
+  </p>
+
+  <h3 style={{ margin: "16px 0 10px 0" }}>How It Works</h3>
+  <ul style={{ margin: 0, paddingLeft: "18px" }}>
+    <li>Enter your email address or phone number</li>
+    <li>We scan known data breaches</li>
+    <li>You instantly get a result on whether your data may have been exposed</li>
+  </ul>
+
+  <h3 style={{ margin: "16px 0 10px 0" }}>Your Privacy Is Our Priority</h3>
+  <p style={{ margin: 0 }}>
+    We don’t store or share your input. This tool provides general guidance only.
+  </p>
+</div>
 
           {/* Result */}
          {/* Result */}
