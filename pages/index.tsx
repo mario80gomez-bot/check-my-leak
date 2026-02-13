@@ -116,9 +116,9 @@ export default function Home() {
 
   <h3 style={{ margin: "16px 0 10px 0" }}>How It Works</h3>
   <ul style={{ margin: 0, paddingLeft: "18px" }}>
-    <li>Enter your email address or phone number</li>
-    <li>We scan known data breaches</li>
-    <li>You instantly get a result on whether your data may have been exposed</li>
+    <li>🔍 Enter your email address or phone number</li>
+<li>🛡️ We scan known data breaches</li>
+<li>⚡ You instantly get a result on whether your data may have been exposed</li>
   </ul>
 
   <h3 style={{ margin: "16px 0 10px 0" }}>Your Privacy Is Our Priority</h3>
