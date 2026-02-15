@@ -155,6 +155,33 @@ export default function Home() {
     </p>
   </div>
 )}
+{/* Result (shows AFTER you click Check Now) */}
+{result && (
+  <div
+    style={{
+      marginTop: "12px",
+      padding: "12px 14px",
+      borderRadius: "12px",
+      backgroundColor: "#f5f7ed",
+      border: "1px solid #d8d8d8",
+      color: "#222",
+      animation: "fadeIn 250ms ease-out",
+    }}
+  >
+    <div style={{ fontWeight: 600 }}>{result}</div>
+
+    <p
+      style={{
+        marginTop: "8px",
+        fontSize: "12px",
+        color: "#666",
+        textAlign: "center",
+      }}
+    >
+      We don&apos;t store what you type. This tool provides general guidance only.
+    </p>
+  </div>
+)}
 
 
 
