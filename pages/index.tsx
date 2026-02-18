@@ -111,33 +111,44 @@ export default function Home() {
             {loading ? "Checking..." : "Check Now"}
           </button>
 
-          {/* Result (shows AFTER you click Check Now) */}
-          {result && (
-            <div
-              style={{
-                marginTop: "12px",
-                padding: "12px 14px",
-                borderRadius: "12px",
-                backgroundColor: "#f5f7ed",
-                border: "1px solid #d8d8d8",
-                color: "#222",
-                animation: "fadeIn 250ms ease-out",
-              }}
-            >
-              <div style={{ fontWeight: 600 }}>{result}</div>
+       {/* Result + Next Steps (simple, like before) */}
+{result && (
+  <div
+    style={{
+      marginTop: "12px",
+      padding: "12px 14px",
+      borderRadius: "12px",
+      backgroundColor: "#f5f7ed",
+      border: "1px solid #d8d8d8",
+      color: "#222",
+      animation: "fadeIn 250ms ease-out",
+    }}
+  >
+    <div style={{ fontWeight: 600 }}>{result}</div>
 
-              <p
-                style={{
-                  marginTop: "8px",
-                  fontSize: "12px",
-                  color: "#666",
-                  textAlign: "center",
-                }}
-              >
-                We don&apos;t store what you type. This tool provides general guidance only.
-              </p>
-            </div>
-          )}
+    <p style={{ marginTop: "10px", marginBottom: "8px", fontWeight: 600 }}>
+      Next Steps
+    </p>
+
+    <ul style={{ margin: 0, paddingLeft: "18px" }}>
+      <li>Change passwords for important accounts</li>
+      <li>Enable two-factor authentication (2FA)</li>
+      <li>Watch for phishing emails or texts</li>
+    </ul>
+
+    <p
+      style={{
+        marginTop: "10px",
+        fontSize: "12px",
+        color: "#666",
+        textAlign: "center",
+      }}
+    >
+      We don&apos;t store what you type. This tool provides general guidance only.
+    </p>
+  </div>
+)}
+
 
           {/* Next Steps (only shows after a result) */}
           {result && (
