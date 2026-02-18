@@ -7,9 +7,6 @@ export default function Home() {
   const [result, setResult] = useState<string>("");
 
   const handleCheck = () => {
-    if (loading) return;
-    if (input.trim().length === 0) return;
-
     setLoading(true);
     setResult("");
 
@@ -17,7 +14,7 @@ export default function Home() {
       // demo result
       setResult("⚠️ Your information appears in at least one known data breach.");
       setLoading(false);
-    }, 1500);
+    }, 1200);
   };
 
   return (
@@ -40,6 +37,13 @@ export default function Home() {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+        a {
+          color: #0b63ce;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
         }
       `}</style>
 
@@ -68,16 +72,18 @@ export default function Home() {
           margin: "0 auto",
         }}
       >
-        <h1 style={{ textAlign: "center", color: "#0070f3" }}>Check My Leak</h1>
+        <h1 style={{ textAlign: "center", color: "#0070f3", marginBottom: "6px" }}>
+          Check My Leak
+        </h1>
 
-        <p style={{ textAlign: "center", marginBottom: "2rem" }}>
+        <p style={{ textAlign: "center", marginTop: 0, marginBottom: "1.25rem" }}>
           Find out instantly if your personal data has been exposed online.
           <br />
           Protect yourself with one quick check.
         </p>
 
         {/* Checker UI */}
-        <div style={{ marginTop: "1.5rem" }}>
+        <div style={{ marginTop: "1rem" }}>
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -104,73 +110,108 @@ export default function Home() {
               backgroundColor: loading ? "#9bbcf5" : "#0070f3",
               color: "white",
               fontSize: "16px",
-              fontWeight: 600,
+              fontWeight: 700,
               cursor: loading ? "not-allowed" : "pointer",
             }}
           >
             {loading ? "Checking..." : "Check Now"}
           </button>
 
-       {/* Result + Next Steps (simple, like before) */}
-{result && (
-  <div
-    style={{
-      marginTop: "12px",
-      padding: "12px 14px",
-      borderRadius: "12px",
-      backgroundColor: "#f5f7ed",
-      border: "1px solid #d8d8d8",
-      color: "#222",
-      animation: "fadeIn 250ms ease-out",
-    }}
-  >
-    <div style={{ fontWeight: 600 }}>{result}</div>
-
-    <p style={{ marginTop: "10px", marginBottom: "8px", fontWeight: 600 }}>
-      Next Steps
-    </p>
-
-    <ul style={{ margin: 0, paddingLeft: "18px" }}>
-      <li>Change passwords for important accounts</li>
-      <li>Enable two-factor authentication (2FA)</li>
-      <li>Watch for phishing emails or texts</li>
-    </ul>
-
-    <p
-      style={{
-        marginTop: "10px",
-        fontSize: "12px",
-        color: "#666",
-        textAlign: "center",
-      }}
-    >
-      We don&apos;t store what you type. This tool provides general guidance only.
-    </p>
-  </div>
-)}
-
-
-          {/* Next Steps (only shows after a result) */}
+          {/* Result + Warm “Next steps” box (shows AFTER you click Check Now) */}
           {result && (
-            <div style={{ marginTop: "16px", animation: "fadeIn 250ms ease-out" }}>
-              <h3 style={{ margin: "0 0 10px 0" }}>Next Steps</h3>
-              <p style={{ margin: "0 0 10px 0" }}>
-                If your information appears in breaches, consider updating passwords and enabling 2FA.
-              </p>
-              <ul style={{ margin: 0, paddingLeft: "18px" }}>
-                <li>Change passwords for important accounts</li>
-                <li>Enable two-factor authentication (2FA)</li>
-                <li>Watch for phishing emails or texts</li>
-              </ul>
+            <div
+              style={{
+                marginTop: "12px",
+                padding: "14px 14px",
+                borderRadius: "12px",
+                backgroundColor: "#fff6e6", // warm/tan
+                border: "1px solid #f1d2a6",
+                color: "#222",
+                animation: "fadeIn 250ms ease-out",
+              }}
+            >
+              <div style={{ fontWeight: 700, marginBottom: "8px" }}>
+                {result}{" "}
+                <span style={{ fontWeight: 400 }}>
+                  We recommend securing your accounts.
+                </span>
+              </div>
+
+              <div style={{ fontWeight: 700, marginTop: "10px", marginBottom: "8px" }}>
+                Next steps to protect yourself
+              </div>
+
+              {/* Action items */}
+              <div
+                style={{
+                  display: "grid",
+                  gap: "10px",
+                }}
+              >
+                <div
+                  style={{
+                    background: "white",
+                    border: "1px solid #f1e2c8",
+                    borderRadius: "10px",
+                    padding: "10px 12px",
+                  }}
+                >
+                  <div style={{ fontWeight: 700, marginBottom: "4px" }}>
+                    🔐 Password Manager (recommended)
+                  </div>
+                  <div style={{ fontSize: "13px", color: "#444", marginBottom: "6px" }}>
+                    Create strong unique passwords + secure them in one place.
+                  </div>
+                  <a href="/affiliate-disclosure">View recommended tools →</a>
+                </div>
+
+                <div
+                  style={{
+                    background: "white",
+                    border: "1px solid #f1e2c8",
+                    borderRadius: "10px",
+                    padding: "10px 12px",
+                  }}
+                >
+                  <div style={{ fontWeight: 700, marginBottom: "4px" }}>
+                    🧾 Identity / Credit Monitoring
+                  </div>
+                  <div style={{ fontSize: "13px", color: "#444", marginBottom: "6px" }}>
+                    Get alerts if your identity details appear in suspicious activity.
+                  </div>
+                  <a href="/faq">See options →</a>
+                </div>
+
+                <div
+                  style={{
+                    background: "white",
+                    border: "1px solid #f1e2c8",
+                    borderRadius: "10px",
+                    padding: "10px 12px",
+                  }}
+                >
+                  <div style={{ fontWeight: 700, marginBottom: "4px" }}>
+                    ✉️ Email Aliases + Spam Protection
+                  </div>
+                  <div style={{ fontSize: "13px", color: "#444", marginBottom: "6px" }}>
+                    Reduce spam — protect your real email from future leaks.
+                  </div>
+                  <a href="/faq">Learn more →</a>
+                </div>
+              </div>
+
+              <div style={{ marginTop: "10px", fontSize: "12px", color: "#6a5a44" }}>
+                We don&apos;t store what you type. This tool provides general guidance only.
+              </div>
             </div>
           )}
 
-          {/* Info / Education section (shows BEFORE any result) */}
-          <div style={{ marginTop: "18px" }}>
+          {/* Info / Education section (always visible, stays BELOW the result once result appears) */}
+          <div style={{ marginTop: result ? "18px" : "18px" }}>
             <h3 style={{ margin: "0 0 10px 0" }}>🔍 What is Check My Leak?</h3>
             <p style={{ margin: "0 0 10px 0" }}>
-              Check My Leak is a simple tool that helps you find out if your email or phone number has
-              been exposed in a data breach.
+              Check My Leak is a simple tool that helps you find out if your email or phone number
+              has been exposed in a data breach.
             </p>
 
             <h3 style={{ margin: "16px 0 10px 0" }}>🛠️ How It Works</h3>
@@ -182,7 +223,7 @@ export default function Home() {
 
             <h3 style={{ margin: "16px 0 10px 0" }}>🔒 Your Privacy Is Our Priority</h3>
             <p style={{ margin: 0 }}>
-              We don’t store or share your input. This tool provides general guidance only.
+              We don&apos;t store or share your input. This tool provides general guidance only.
             </p>
           </div>
 
@@ -216,7 +257,6 @@ export default function Home() {
     </div>
   );
 }
-
 
 
 
