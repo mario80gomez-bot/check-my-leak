@@ -25,6 +25,7 @@ export default function Home() {
           name="description"
           content="Find out if your email or phone number has been exposed in a data breach."
         />
+        <meta name="impact-site-verification" content="bcedd874-0f46-47a9-930e-82497c99eb7b" />
       </Head>
 
       <style jsx global>{`
